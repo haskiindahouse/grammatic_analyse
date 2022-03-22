@@ -8,10 +8,10 @@
 
 #include "Rule.h"
 
-Rule::Rule(Expression* right, Expression* operation, Expression* left):
-    m_leftExpression(right),
+Rule::Rule(Expression* left, Expression* operation, Expression* right):
+    m_leftExpression(left),
     m_operationExpression(operation),
-    m_rightExpression(left),
+    m_rightExpression(right),
     m_result(nullptr)
 {}
 

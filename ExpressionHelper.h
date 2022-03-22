@@ -4,10 +4,12 @@
 #include <string>
 
 class Expression;
+class Rule;
 
 class ExpressionHelper final
 {
 public:
     static bool isRule(Expression* expression);
+    static Rule* expressionToRule(Expression* expression);
 };
 

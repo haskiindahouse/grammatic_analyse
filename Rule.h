@@ -47,7 +47,7 @@ class Rule final
     // Зачем мне это?
     // Пока напишу класс чисто для первого задания
 public:
-    explicit Rule(Expression* right, Expression* operation, Expression* left);
+    explicit Rule(Expression* left, Expression* operation, Expression* right);
     ~Rule() = default;
 
 public:
