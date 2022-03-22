@@ -52,6 +52,7 @@ public:
 
 public:
     Expression* result();
+    bool isEntryPoint();
 
 private:
     void executeRule();
@@ -61,5 +62,6 @@ private:
     Expression* m_operationExpression;
     Expression* m_leftExpression;
     Expression* m_result;
+    bool m_isEntryPoint;
 };
 

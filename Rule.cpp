@@ -12,7 +12,8 @@ Rule::Rule(Expression* left, Expression* operation, Expression* right):
     m_leftExpression(left),
     m_operationExpression(operation),
     m_rightExpression(right),
-    m_result(nullptr)
+    m_result(nullptr),
+    m_isEntryPoint(false)
 {}
 
 void Rule::executeRule()
@@ -25,4 +26,8 @@ Expression* Rule::result()
 {
     this->executeRule();
     return m_result;
+}
+
+bool Rule::isEntryPoint() {
+    return "S" == m_leftExpression->value();
 }

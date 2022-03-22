@@ -27,9 +27,7 @@ Expression* BasicRuleExecuteHelper::execute(Expression& leftExpression, Expressi
     switch (index)
     {
         case Rules::BasicRulesEnum::Convert:
-        {
             return convert(leftExpression, rightExpression);
-        }
         default:
             std::cout << "execution failed: unknown error!" << std::endl;
             return nullptr;

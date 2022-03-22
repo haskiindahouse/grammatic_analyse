@@ -7,6 +7,8 @@
 
 #include "Parser.h"
 
+#include "RuleExecuter.h"
+
 using namespace std;
 
 
@@ -27,10 +29,12 @@ int main() {
 
      std::cout << ret->value() << std::endl;
     */
-     std::cout << "Input:\n";
+    std::cout << "Input:\n";
     std::string s;
     std::getline(cin, s);
     auto pars = new Parser(s);
+    /*
+     * Второй вариант (уже лучше, но все равно много TODO)...
     for (const auto& expr : pars->rules())
     {
         Rule* testRule = ExpressionHelper::expressionToRule(expr);
@@ -40,6 +44,13 @@ int main() {
         Expression* ret = testRule->result(); // простое правило
         std::cout << ret->value() << std::endl; // результ простого правила
     }
+     */
+    // точка входа нужна
+    // S->A
+    // A->a
+    auto executor = new RuleExecuter(pars->rules());
+    executor->exec();
+
     return 0;
 }
 /*
